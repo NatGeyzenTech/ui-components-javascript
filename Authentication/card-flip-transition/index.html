@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Auth Card Flip Transition</title>
+</head>
+<body>
+  <div class="container">
+    <div class="flex">
+      <div class="row">
+        <button id="login" class="active">Log in</button>
+        <button id="createAccount">Create account</button>
+      </div>
+      <div class="scene">
+        <div class="card">
+          <form class="card-front" name="login">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="space bottom" id="login-email" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="login-password" minlength=6 required>
+            <button class="submit default" id="login-submit">Log in</button>
+          </form>
+          <form class="card-back" name="create-account">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="space bottom" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" class="space bottom" required>
+            <label for="confirm-password">Confirm password</label>
+            <input type="password" name="confirm-password" required>
+            <button class="submit" onsubmit="return validatePasswords()">Create account</button>
+          </form>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

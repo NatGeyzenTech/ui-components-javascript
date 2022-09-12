@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+body, button {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#login, #createAccount, .submit:enabled {
+ cursor: pointer;  
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #1f0c29, #412b63, #34243e);
+}
+
+.flex, .row {
+  display: flex;
+}
+
+.flex, .submit {
+  position: absolute;
+  left: 50%;
+}
+
+.flex {
+  top: 25%;
+  transform: translateX(-50%);
+  flex-direction: column;
+}
+
+.row {
+  width: 100%;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+
+#login, #createAccount {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.scene {
+  perspective: 600px;
+  width: 350px;
+  height: 235px;
+  transition: height 0.7s;
+}
+
+.scene.hasFlippedCard {
+  height: 300px;
+  transition: height 0.7s;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.card.isFlipped {
+  transform: rotateY(180deg);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  width: 17.5px;
+  height: 17.5px;
+  background-color: white;
+  top: -9px;
+  transform: rotate(45deg);
+  left: 18%;
+  transition: left 0.5s;
+}
+
+.card.isFlipped::after {
+  left: 27.5%;
+}
+
+.card-front, .card-back {
+  background-color: #ffffff;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 25px;
+  box-shadow: 5px 20px 50px #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+label, input {
+  display: block;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  width: 97%;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+input:invalid {
+  border: 1px solid #bfbdd9;
+  background-color: #e7e6f2;
+}
+
+input:valid {
+  border: 1px solid green;
+  background-color: #EEF7F4;
+}
+
+.space.bottom {
+  margin-bottom: 1rem;
+}
+
+.submit {
+  margin-top: 1.75rem;
+  transform: translateX(-50%);
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 3px 3px 12px #000;
+  background-color: #60458A;
+}
